@@ -19,6 +19,13 @@ class MainActivity : AppCompatActivity() {
         val reqresConnection = reqresEndpoint.openConnection() as HttpsURLConnection
         reqresConnection.setRequestProperty("User-Agent", "genius-demo-gavin-rose-v0.1")
 
+        //Check to see if connected properly to endpoint.
+        if (reqresConnection.responseCode === 200) {
+            //Continue application
+        } else {
+            //Error with connection
+        }
+
         //Create background thread here.
         //Usually, I would use RxJava or Coroutines for Asynchronous tasks.
         AsyncTask.execute {
